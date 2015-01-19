@@ -1,5 +1,5 @@
-FROM ubuntu:12.04.5
-MAINTAINER Martin Yrjölä <martin.yrjola@gmail.com>
+FROM ubuntu:14.04
+MAINTAINER Takeshi HASEGAWA <hasegaw@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -22,7 +22,7 @@ RUN apt-get install -y build-essential libacl1-dev libattr1-dev \
       libblkid-dev libgnutls-dev libreadline-dev python-dev libpam0g-dev \
       python-dnspython gdb pkg-config libpopt-dev libldap2-dev \
       dnsutils libbsd-dev attr krb5-user docbook-xsl libcups2-dev acl python-xattr
-RUN apt-get install -y samba smbclient krb5-kdc
+RUN apt-get install -y samba samba-common-bin smbclient krb5-kdc
 
 # Install utilities needed for setup
 RUN apt-get install -y expect pwgen
